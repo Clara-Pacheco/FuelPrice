@@ -3,9 +3,9 @@
 [x] - Criar projeto e preparar json server
 [x] - Criar pastas e estrutura do projeto
 [x] - Criar os componentes
-[] - Importar fonts Roboto e Digital
-[] - Alterar título da App
-[] - Alterar Ícone
+[x] - Importar fonts Roboto e Digital
+[x] - Alterar título da App
+[x] - Alterar Ícone
 [] - Configurar tema e styled-components
 [] - Criar Fuel Component
 [] - Add Icons Package
