@@ -13,7 +13,7 @@
 [] - Conectar na componente na API
 [] - Criar etapa de alteração de preços
 
-## O que aprendemos
+## Conceitos trabalhados
 
 React
 Components
