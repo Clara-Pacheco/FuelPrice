@@ -1,7 +1,7 @@
 # FuelPrice
 
 [x] - Criar projeto e preparar json server
-[] - Criar pastas e estrutura do projeto
+[x] - Criar pastas e estrutura do projeto
 [] - Criar os componentes
 [] - Importar fonts Roboto e Digital
 [] - Alterar título da App
