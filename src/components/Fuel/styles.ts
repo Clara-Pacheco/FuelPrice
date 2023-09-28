@@ -7,7 +7,7 @@ export const Title = styled.h1`
 
   font-size: 48px;
 
-  color: ${(props) => props.theme.colorGrey200};
+  color: ${(props) => props.theme.colorGray200};
 
   padding-top: 10px;
 
