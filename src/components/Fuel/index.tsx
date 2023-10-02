@@ -1,5 +1,5 @@
 
-import { Container, Panel, SettingIcon, Title, Box, Row } from "./styles"
+import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice } from "./styles"
 
 export const FuelComponent = () => {
   return (
@@ -8,21 +8,37 @@ export const FuelComponent = () => {
       <SettingIcon />
       <Panel>
         <Row>
-          <Box>Gasolina Comum</Box>
-          <Box>7,69</Box>
+          <Box>
+            <FuelText>Gasolina Comum</FuelText>
+          </Box>
+          <Box>7
+            <FuelPrice>7,19</FuelPrice>
+          </Box>
         </Row>
         <Row>
-          <Box>Etanol</Box>
-          <Box>5,89</Box>
+          <Box>
+            <FuelText>Etanol</FuelText>
+          </Box>
+          <Box>7
+            <FuelPrice>5,89</FuelPrice>
+          </Box>
         </Row>
         <Row>
-          <Box>Diesel</Box>
-          <Box>4,99</Box>
+          <Box>
+            <FuelText>Diesel</FuelText>
+          </Box>
+          <Box>7
+            <FuelPrice>4,99</FuelPrice>
+          </Box>
         </Row>
         <Row>
-          <Box>Diesel S10</Box>
-          <Box>5,19</Box>
-        </Row>   
+          <Box>
+            <FuelText>Diesel S10</FuelText>
+          </Box>
+          <Box>7
+            <FuelPrice>5,19</FuelPrice>
+          </Box>
+        </Row>
       </Panel>
     </Container>
   )
