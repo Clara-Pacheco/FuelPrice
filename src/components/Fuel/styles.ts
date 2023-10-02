@@ -35,6 +35,40 @@ export const SettingIcon = styled(FiSettings) `
   right: 20px;
   top: 20px;
 
+`
+
+export const Panel = styled.section`
+  width: 300px;
+  height: 500px;
+  background-color: ${({ theme }) => theme.colorGray100};
+
+  border-radius: 5px;
+
+  position: relative;
+  left: calc(100vw - 350px);
+  margin-top: 60px;
+
+`
+
+export const Box = styled.div`
+  width: 135px;
+  height: 65px;
+
+  background: ${({ theme }) => theme.colorBlue200};
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:${({ theme }) => theme.colorWhite};
+
+`
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
 
 
 `
