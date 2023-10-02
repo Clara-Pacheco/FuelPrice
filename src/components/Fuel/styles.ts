@@ -60,15 +60,24 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color:${({ theme }) => theme.colorWhite};
-
 `
 
 export const Row = styled.div`
   display: flex;
   justify-content: space-around;
-  padding-top: 15px;
+  padding-top: 45px;
 
+`
 
+export const FuelText = styled.span`
+   color:${({ theme }) => theme.colorWhite};
+   font-size: 1.5rem;
+   font-weight: bold;
+`
+export const FuelPrice = styled.span`
+   font-family: 'Digital-7 Mono', sans-serif;
+   color:${({ theme }) => theme.colorYellow600};
+   font-size: 3.5rem;
+   
+   text-align: left;
 `
