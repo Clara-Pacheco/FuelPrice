@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react"
 import { getFuel } from "./services"
 import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice } from "./styles"
-import { IFuel } from "./types"
+import { FuelComponentsProps, IFuel } from "./types"
+import { Edit } from "lucide-react"
 
-export const FuelComponent = () => {
+export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) => {
   const[fuels,setFuel] = useState<IFuel[]>()
 
   async function fetchAndUpdateData () {
@@ -19,7 +20,10 @@ export const FuelComponent = () => {
   return (
     <Container>
       <Title>Posto ReactJS</Title>
-      <SettingIcon />
+      <SettingIcon onClick = { toggleEditMode } />
+
+      {editMode && <h1>EDIT MODE ON</h1>}
+
       <Panel>
        {fuels?.map((fuel)=>{
          return (
