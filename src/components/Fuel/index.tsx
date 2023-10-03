@@ -1,7 +1,9 @@
 
+import { getFuel } from "./services"
 import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice } from "./styles"
 
 export const FuelComponent = () => {
+  getFuel()
   return (
     <Container>
       <Title>Posto ReactJS</Title>
