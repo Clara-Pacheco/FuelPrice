@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import imageGasStation from '../../assets/gas-station.jpg'
 
-import { FiSettings } from 'react-icons/fi'
+import { FiSettings, FiSave } from 'react-icons/fi'
 
 export const Container = styled.div`
   background: url(${imageGasStation});
@@ -39,7 +39,7 @@ export const SettingIcon = styled(FiSettings) `
 
 export const Panel = styled.section`
   width: 300px;
-  height: 500px;
+  height: 600px;
   background-color: ${({ theme }) => theme.colorGray100};
 
   border-radius: 5px;
@@ -65,7 +65,7 @@ export const Box = styled.div`
 export const Row = styled.div`
   display: flex;
   justify-content: space-around;
-  padding-top: 45px;
+  padding-top: 35px;
 
 `
 
@@ -80,4 +80,46 @@ export const FuelPrice = styled.span`
    font-size: 3.5rem;
    
    text-align: left;
+`
+
+export const InfoText = styled.span`
+   color:${({ theme }) => theme.colorWhite};
+   font-size: 1.2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+
+`
+
+export const SaveButton = styled.button`
+  width: 150px;
+  background-color: ${({ theme }) => theme.colorBlue200};
+  border: none;
+  color: ${({ theme }) => theme.colorWhite};
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px;
+
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &:hover {
+    filter: brightness(.8)
+  }
+
+`
+
+export const SaveIcon = styled(FiSave) `
+  color: ${({ theme }) => theme.colorWhite};
+  font-size: 30px;
+
+
+
 `

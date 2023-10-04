@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from "react"
 import { getFuel } from "./services"
-import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice } from "./styles"
+import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, InfoText, SaveButton, SaveIcon } from "./styles"
 import { FuelComponentsProps, IFuel } from "./types"
-import { Edit } from "lucide-react"
+import {FiEdit2} from 'react-icons/fi'
+
 
 export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) => {
   const[fuels,setFuel] = useState<IFuel[]>()
@@ -22,9 +23,17 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
       <Title>Posto ReactJS</Title>
       <SettingIcon onClick = { toggleEditMode } />
 
-      {editMode && <h1>EDIT MODE ON</h1>}
 
       <Panel>
+      {editMode && 
+        <h1>
+          <Row>
+          <InfoText>
+            <FiEdit2 />
+              Altere o preço do item e salve
+          </InfoText>
+          </Row>
+        </h1>}
        {fuels?.map((fuel)=>{
          return (
           <>
@@ -39,8 +48,15 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
           </>
          )
        })}
-       
-      </Panel>
+       {editMode && 
+       <Row>
+        <SaveButton>
+          <SaveIcon/>
+              Save
+          </SaveButton>
+        </Row>
+        }
+    </Panel>
     </Container>
   )
 }
