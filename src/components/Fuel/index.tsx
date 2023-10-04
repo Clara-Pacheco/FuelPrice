@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react"
 import { getFuel } from "./services"
 import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, InfoText, SaveButton, SaveIcon, FuelInput } from "./styles"
-import { FuelComponentsProps, IFuel } from "./types"
+import { FuelComponentsProps, IFuelState } from "./types"
 import {FiEdit2} from 'react-icons/fi'
 
 
 export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) => {
-  const[fuels,setFuel] = useState<IFuel[]>()
+  const[fuels,setFuel] = useState<IFuelState[]>()
 
   async function fetchAndUpdateData () {
     const data = await getFuel()
@@ -28,6 +28,10 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
     })
 
     setFuel(updatedFuels)
+  }
+
+  function onSave () {
+
   }
   
   return (
