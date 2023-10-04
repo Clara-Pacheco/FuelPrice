@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { getFuel } from "./services"
+import { getFuel, updateFuel } from "./services"
 import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, InfoText, SaveButton, SaveIcon, FuelInput } from "./styles"
 import { FuelComponentsProps, IFuelState } from "./types"
 import {FiEdit2} from 'react-icons/fi'
@@ -23,6 +23,7 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
 
       if(fuel.id === fuelId) {
         fuel.price = Number(price)
+        fuel.updated = true;
       }
       return fuel
     })
@@ -30,9 +31,27 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
     setFuel(updatedFuels)
   }
 
-  function onSave () {
+  async function onSave () {
+    const changed = fuels?.filter((fuel) => fuel.updated)
 
+    if(!changed){
+      toggleEditMode()
+      return
+    }
+
+    for( const changedFuel of changed ) {
+       // eslint-disable-next-line @typescript-eslint/no-unused-vars
+       const { updated, ...rest } = changedFuel
+       await updateFuel(rest)
+    }
+
+    fetchAndUpdateData()
+    toggleEditMode()
   }
+
+
+
+
   
   return (
     <Container>
@@ -70,7 +89,7 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
        })}
        {editMode && 
        <Row>
-        <SaveButton>
+        <SaveButton onClick={onSave}>
           <SaveIcon/>
               Save
           </SaveButton>
