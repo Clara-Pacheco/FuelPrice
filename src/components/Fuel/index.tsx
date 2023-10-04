@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { getFuel } from "./services"
-import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, InfoText, SaveButton, SaveIcon } from "./styles"
+import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, InfoText, SaveButton, SaveIcon, FuelInput } from "./styles"
 import { FuelComponentsProps, IFuel } from "./types"
 import {FiEdit2} from 'react-icons/fi'
 
@@ -17,6 +17,18 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
   useEffect(() => {
     fetchAndUpdateData();
   }, [])
+
+  function onUpdateFuel(fuelId: number, price: string){
+    const updatedFuels = fuels?.map((fuel) => {
+
+      if(fuel.id === fuelId) {
+        fuel.price = Number(price)
+      }
+      return fuel
+    })
+
+    setFuel(updatedFuels)
+  }
   
   return (
     <Container>
@@ -41,8 +53,12 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
             <Box>
               <FuelText>{fuel.name}</FuelText>
             </Box>
-            <Box>7
-              <FuelPrice>{fuel.price}</FuelPrice>
+            <Box>
+              { editMode ? <FuelInput
+               type="number"
+               value={fuel.price}
+               onChange={(event) => onUpdateFuel(fuel.id, event.target.value)}
+               /> : <FuelPrice>{fuel.price}</FuelPrice> } 
             </Box>
           </Row>  
           </>
