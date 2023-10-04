@@ -34,7 +34,7 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
   async function onSave () {
     const changed = fuels?.filter((fuel) => fuel.updated)
 
-    if(!changed){
+    if(!changed || changed.length === 0){
       toggleEditMode()
       return
     }
