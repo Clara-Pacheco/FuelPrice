@@ -9,9 +9,9 @@
 [x] - Configurar tema e styled-components
 [x] - Criar Fuel Component
 [x] - Add Icons Package
-[] - Configurar Axios
-[] - Conectar na componente na API
-[] - Criar etapa de alteração de preços
+[X] - Configurar Axios
+[X] - Conectar na componente na API
+[X] - Criar etapa de alteração de preços
 
 ## Conceitos trabalhados
 
