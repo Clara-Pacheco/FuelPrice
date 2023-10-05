@@ -5,6 +5,7 @@ import { Container, Panel, SettingIcon, Title, Box, Row, FuelText, FuelPrice, In
 import { FuelComponentsProps, IFuelState } from "./types"
 import {FiEdit2} from 'react-icons/fi'
 
+const TIME_TO_UPDATE_MS = 1000
 
 export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) => {
   const[fuels,setFuel] = useState<IFuelState[]>()
@@ -49,7 +50,19 @@ export const FuelComponent = ({ editMode, toggleEditMode }:FuelComponentsProps) 
     toggleEditMode()
   }
 
+  useEffect(()=>{
+    if(editMode){
+      return
+    }
 
+    const idInterval = setInterval(()=>{
+      fetchAndUpdateData()
+    }, TIME_TO_UPDATE_MS)
+
+    return () =>{
+      clearInterval(idInterval);  
+    }
+  }, [editMode])
 
 
   

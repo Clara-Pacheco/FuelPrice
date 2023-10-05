@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Gasolina Comum",
-      "price": 6.39
+      "price": 5.39
     },
     {
       "id": 2,
@@ -13,12 +13,12 @@
     {
       "id": 3,
       "name": "Etanol",
-      "price": 3.42
+      "price": 4.42
     },
     {
       "id": 4,
       "name": "Diesel",
-      "price": 6.19
+      "price": 4.19
     }
   ]
 }
